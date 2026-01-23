@@ -7,7 +7,7 @@
   };
 
   outputs = { self, nixpkgs, nixvim, flake-utils, ... }@inputs:
-    let config = import ./config; # import the module directly
+    let config = import ./config;  # import the module directly
     in flake-utils.lib.eachDefaultSystem (system:
       let
         nixvimLib = nixvim.lib.${system};
@@ -19,7 +19,7 @@
         };
       in
       {
-        formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
+        formatter = nixpkgs.nixfmt;
 
         checks = {
           default = nixvimLib.check.mkTestDerivationFromNvim {
