@@ -34,15 +34,12 @@
           enable = true;
           package = null; # default pkgs.swi-prolog;
         };
-      };
-      keymaps.lspBuf = {
-        "gd" = "definition";
-        "gD" = "references";
-        "gt" = "type_definition";
-        "gi" = "implementation";
-        "K" = "hover";
-      };
+        angularls = {
+          enable = true;
+          package = null;
+        };
+      };  
     };
-    rustaceanvim.enable = true;
+    rustaceanvim.enable = true; 
   };
 }
