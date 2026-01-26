@@ -7,7 +7,6 @@
     ./lightline.nix
     ./lsp/default.nix
     ./lsp/fidget.nix
-    ./lsp/ionide.nix
     ./lsp/none-ls.nix
     ./lsp/trouble.nix
     ./nvim-tree.nix
@@ -31,6 +30,16 @@
 
   extraConfigVim = ''
     autocmd BufRead,BufNewFile *.pl set filetype=prolog
+  '';
+
+  extraConfigLua = ''
+    vim.api.create_autocmd("VimEnter", {
+      callback = function()
+        if vim.fn.argc() == 0 then
+          vim.cmd("NvimTreeToggle")
+        end
+      end,
+    })
   '';
 
   globals.mapleader = " ";
@@ -141,6 +150,17 @@
       action = "<CMD>Gitsigns reset_buffer<CR>";
       options.desc = "Gitsigns reset current buffer";
     }
+    
+    {
+      mode = "i";
+      key = "jk";
+      action = "<Esc>";
+      options = {
+        silent = true;
+        desc = "Escape to Normal Mode";
+      };
+    }
+
 
     # Tabs
     {

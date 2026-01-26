@@ -18,8 +18,14 @@ Because who doesn't like a declarative configuration of Neovim?
 To run the configuration, you can type the following:
 
 ```bash
-nix run github:mikaelfangel/nixvim-config
+nix run github:herrluisi/nixvim-config
 ```
+
+If you want to try the configuration you can just add it temporary to your profile:
+```bash
+nix profile add github:herrluisi/nixvim-config
+```
+
 
 ## How to include as package
 

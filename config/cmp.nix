@@ -17,7 +17,6 @@
           hgcommit = false;
           svn = false;
           cvs = false;
-          "." = false;
         };
       };
     };
