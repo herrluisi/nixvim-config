@@ -12,11 +12,6 @@ pkgs.mkShell {
     # Elixir
     elixir
 
-    # FSharp
-    dotnet-sdk
-    fsautocomplete
-    fantomas
-
     # Go
     go
 

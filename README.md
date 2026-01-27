@@ -26,6 +26,11 @@ If you want to try the configuration you can just add it temporary to your profi
 nix profile add github:herrluisi/nixvim-config
 ```
 
+To remove it from your profile:
+```bash
+nix profile delete nixvim-config
+```
+
 
 ## How to include as package
 
@@ -56,7 +61,6 @@ Descriptions of all the config files/plugins used in this configuration.
 | default.nix | Default configuration file for nixvim. |
 | fidget.nix | Show LSP notifications in the bottom corner. |
 | git.nix | Gitsigns shows git decorations in Lua, including signs for added, removed, and changed lines. |
-| ionide.nix | IDE-like features for F# programming. |
 | lightline.nix | Lightweight status line. |
 | lsp.nix | Language Server Protocol support. |
 | none-ls.nix | Additional language server configurations. |
@@ -66,6 +70,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | toggleterm.nix | Management of multiple terminal windows. |
 | treesitter.nix | Syntax highlighting and indentation based on Tree-sitter. |
 | trouble.nix | Provides a pretty list for showing diagnostics, references, telescope results, quickfix and location lists | 
+| vimtex.nix | Plugin to write and compile LaTeX Code in Neovim |
 | which_key.nix | Popup display of keybindings. |
 
 ## Contributing
