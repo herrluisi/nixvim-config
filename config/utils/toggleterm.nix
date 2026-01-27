@@ -2,7 +2,7 @@
   plugins.toggleterm = {
     enable = true;
     settings = {
-      open_mapping = "[<leader>t]";
+      open_mapping = "[<leader>tt]";
     };
   };
 }
