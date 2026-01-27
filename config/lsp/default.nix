@@ -13,28 +13,35 @@
 
         # Packages is set to null to rely on the system wide installed packages
         # this is done to avoid conflicts with the nixpkgs versions.
-        elixirls = {
-          enable = true;
-          package = null; # default pkgs.elixir-ls
-          cmd = [ "elixir-ls" ];
-        };
-        gleam = {
-          enable = true;
-          package = null; # default pkgs.gleam
-        };
-        gopls = {
-          enable = true;
-          package = null; # default pkgs.gopls
-        };
-        kotlin_language_server = {
-          enable = true;
-          package = null; # default pkgs.kotlin-language-server
-        };
-        prolog_ls = {
-          enable = true;
-          package = null; # default pkgs.swi-prolog;
-        };
         angularls = {
+          enable = true;
+          package = null;
+        };
+        texlab = {
+          enable = true;
+          package = null;
+        };
+        marksman = {        # for markdown
+          enable = true;
+          package = null;
+        };
+        tsserver = {
+          enable = true;
+          package = null;
+        };
+        dockerls = {
+          enable = true;
+          package = null;
+        };
+        html = {
+          enable = true;
+          package = null;
+        };
+        cssls = {
+          enable = true;
+          package = null;
+        };
+        rust-analyzer = {
           enable = true;
           package = null;
         };
