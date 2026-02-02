@@ -82,4 +82,5 @@ If there is something that you feel that is not quite right, or you have ideas f
  * [NixVim](https://github.com/nix-community/nixvim)
 
 
-## Huge inspiring by: https://github.com/mikaelfangel/nixvim-config
+## Huge inspiring by: 
+ * https://github.com/mikaelfangel/nixvim-config
