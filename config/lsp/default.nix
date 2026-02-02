@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   plugins = {
     lsp = {
@@ -25,7 +23,7 @@
           enable = true;
           package = null;
         };
-        tsserver = {
+        ts_ls = {
           enable = true;
           package = null;
         };
@@ -41,11 +39,7 @@
           enable = true;
           package = null;
         };
-        rust-analyzer = {
-          enable = true;
-          package = null;
-        };
-      };  
+      };
     };
     rustaceanvim.enable = true; 
   };

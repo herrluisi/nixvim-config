@@ -1,7 +1,8 @@
 {
   imports = [
     ./bufferline.nix
-    ./cmp.nix
+    ./cmp/cmp.nix
+    ./cmp/cmp-copilot.nix
     ./copilot-chat.nix
     ./git.nix
     ./lightline.nix
