@@ -36,7 +36,7 @@ nix profile delete nixvim-config
 
 To include the configuration as a replacement for Neovim, you first need to add it as an input on your system
 ```
-inputs.nixvim.url = "github:mikaelfangel/nixvim-config"
+inputs.nixvim.url = "github:herrluisi/nixvim-config"
 ```
 
 Then you can input this in your configuration.nix (be sure that you inherit inputs from your flake)
@@ -72,6 +72,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | trouble.nix | Provides a pretty list for showing diagnostics, references, telescope results, quickfix and location lists | 
 | vimtex.nix | Plugin to write and compile LaTeX Code in Neovim |
 | which_key.nix | Popup display of keybindings. |
+| wilder.nix | Command auto completion and search function (with /) |
 
 ## Contributing
 
