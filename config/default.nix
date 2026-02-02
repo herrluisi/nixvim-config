@@ -129,7 +129,7 @@
     }
     {
       key = "<leader>gtd";
-      action = "<CMD>Gitsigns toggle_deleted";
+      action = "<CMD>Gitsigns toggle_deleted<CR>";
       options.desc = "Gitsigns deleted";
     }
     {
