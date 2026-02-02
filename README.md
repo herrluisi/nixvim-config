@@ -52,27 +52,63 @@ Then you can input this in your configuration.nix (be sure that you inherit inpu
 
 Descriptions of all the config files/plugins used in this configuration.
 
-| Name | Description |
+### root configuration
+| Name | Configuration |
 | --- | --- |
-| auto-pairs.nix | Pairs brackets and quotes automatically. |
-| autosave.nix | Saves changes to disk automatically. |
+| default.nix | Keymap configuration and import management |
+| options.nix | Indentations, tabstops, ui configuration |
+
+### CMP configuration 
+| Name | Configuration |
+| --- | --- |
+| cmp-copilot.nix | Configuration of copilot suggestion in code |
+| cmp.nix | Selection of the suggestions |
+| copilot-chat.nix | GitHub Copilot chat inside neovim |
+
+### codestyle configuration
+| Name | Configuration |
+| --- | --- |
+| auto-pairs.nix | Pairs brackets and quotes automatically |
+| blankline.nix | Adds automatically Indentation in neovim |
+| treesitter.nix | Syntax highlighting |
+
+### git configuration
+| Name | Configuration |
+| --- | --- |
+| git.nix | Adds git features |
+| lazygit.nix | Adds a floating window with information about the current working directory |
+
+### lsp configuration
+| Name | Configuration |
+| --- | --- |
+| default.nix | configures default language servers |
+| fidget.nix | Show LSP notifications in the bottom corner |
+| none-ls.nix | Additional language server configurations |
+| vimtex.nix | adds latex support (including compiling) |
+
+### tracking
+| Name | Configuration |
+| --- | --- |
+| wakatime.nix | adds time tracking to my projects |
+
+### ui
+| Name | Configuration |
+| --- | --- |
 | bufferline.nix | Tab-like interface for easy buffer navigation. |
-| cmp.nix | Completion source with several options, including copilot. |
-| default.nix | Default configuration file for nixvim. |
-| fidget.nix | Show LSP notifications in the bottom corner. |
-| git.nix | Gitsigns shows git decorations in Lua, including signs for added, removed, and changed lines. |
-| lightline.nix | Lightweight status line. |
-| lsp.nix | Language Server Protocol support. |
-| none-ls.nix | Additional language server configurations. |
-| nvim-tree.nix | File explorer tree. |
-| options.nix | Additional options and settings for nixvim. |
+| lightline.nix | Lightweight Statusline |
+| nvim-tree.nix | Adds a file explorer tree |
+
+### utils
+| Name | Configuration |
+| --- | --- |
+| autosave.nix | autosaves files |
 | telescope.nix | Extendable fuzzy finder over lists. |
-| toggleterm.nix | Management of multiple terminal windows. |
-| treesitter.nix | Syntax highlighting and indentation based on Tree-sitter. |
+| toggleterm.nix | toggles the terminal |
 | trouble.nix | Provides a pretty list for showing diagnostics, references, telescope results, quickfix and location lists | 
-| vimtex.nix | Plugin to write and compile LaTeX Code in Neovim |
-| which_key.nix | Popup display of keybindings. |
+| which-key.nix | displays a popup help for keybindings |
 | wilder.nix | Command auto completion and search function (with /) |
+
+
 
 ## Contributing
 

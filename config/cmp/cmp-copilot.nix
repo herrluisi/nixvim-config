@@ -7,5 +7,4 @@
       panel.enabled = false;
     };
   };
-  # extraConfigLua kann entfernt werden
 }

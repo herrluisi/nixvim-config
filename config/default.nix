@@ -22,6 +22,7 @@
     ./utils/toggleterm.nix
     ./utils/which-key.nix
     ./utils/wilder.nix
+    ./wakatime.nix
   ];
 
   dependencies.gcc.package = null;
