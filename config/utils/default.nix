@@ -2,6 +2,7 @@
 {
   imports = [
     ./autosave.nix
+    ./muren.nix
     ./telescope.nix
     ./toggleterm.nix
     ./trouble.nix
