@@ -102,6 +102,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | Name | Configuration |
 | --- | --- |
 | autosave.nix | autosaves files |
+| muren.nix | advanced search and replace |
 | telescope.nix | Extendable fuzzy finder over lists. |
 | toggleterm.nix | toggles the terminal |
 | trouble.nix | Provides a pretty list for showing diagnostics, references, telescope results, quickfix and location lists | 
