@@ -1,7 +1,7 @@
 {
   imports = [
     ./bufferline.nix
-    ./chadtree.nix
+    ./tree.nix
     ./lightline.nix
   ];
 }
