@@ -1,28 +1,13 @@
 {
   imports = [
-    ./bufferline.nix
-    ./cmp/cmp.nix
-    ./cmp/cmp-copilot.nix
-    ./copilot-chat.nix
-    ./git.nix
-    ./lightline.nix
-    ./lsp/default.nix
-    ./lsp/fidget.nix
-    ./lsp/none-ls.nix
-    ./lsp/trouble.nix
-    ./nvim-tree.nix
     ./options.nix
-    ./treesitter.nix
-    ./vimtex.nix
-    ./utils/auto-pairs.nix
-    ./utils/autosave.nix
-    ./utils/blankline.nix
-    ./utils/lazygit.nix
-    ./utils/telescope.nix
-    ./utils/toggleterm.nix
-    ./utils/which-key.nix
-    ./utils/wilder.nix
-    ./wakatime.nix
+    ./cmp
+    ./codestyle
+    ./git
+    ./lsp
+    ./tracking
+    ./ui
+    ./utils
   ];
 
   dependencies.gcc.package = null;

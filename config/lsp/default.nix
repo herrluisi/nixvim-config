@@ -1,4 +1,12 @@
+{ pkgs, ... }:
 {
+  imports = [
+    ./fidget.nix
+    ./none-ls.nix
+    ./vimtex.nix
+  ];
+
+
   plugins = {
     lsp = {
       enable = true;
