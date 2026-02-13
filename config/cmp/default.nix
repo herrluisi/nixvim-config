@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./cmp-copilot.nix

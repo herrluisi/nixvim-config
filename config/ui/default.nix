@@ -1,8 +1,7 @@
-{ pkgs, ... }:
 {
   imports = [
     ./bufferline.nix
+    ./chadtree.nix
     ./lightline.nix
-    ./nvim-tree.nix
   ];
 }
