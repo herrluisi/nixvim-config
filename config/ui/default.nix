@@ -1,7 +1,8 @@
 {
   imports = [
     ./bufferline.nix
-    ./tree.nix
     ./lightline.nix
+    ./mini-icons.nix
+    ./tree.nix
   ];
 }

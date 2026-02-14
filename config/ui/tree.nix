@@ -1,17 +1,22 @@
 {
-  plugins.chadtree = {
+  plugins.nvim-tree = {
     enable = true;
     autoLoad = true;
+    openOnSetup = true;
     settings = {
-      theme = {
-        icon_glyph_set = "devicons";
-        text_colour_set = "nerdtree_syntax_dark";
-      };
-      view = {
-        window_options = {
-          relativenumber = true;
+      renderer = {
+        icons = {
+          glyphs = {
+            git = {
+              unstaged = "✗";
+              staged = "✓";
+              renamed = "➜";
+              untracked = "★";
+              ignored = "◌";
+            };
+          };
         };
       };
-    }; 
+    };
   };
 }
