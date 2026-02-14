@@ -96,6 +96,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | --- | --- |
 | bufferline.nix | Tab-like interface for easy buffer navigation. |
 | lightline.nix | Lightweight Statusline |
+| mini-icons.nix | Icon provider |
 | nvim-tree.nix | Adds a file explorer tree |
 
 ### utils
