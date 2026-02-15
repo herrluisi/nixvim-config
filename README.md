@@ -95,6 +95,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | Name | Configuration |
 | --- | --- |
 | bufferline.nix | Tab-like interface for easy buffer navigation. |
+| greeter.nix | A nice greeter which gives you a few features for starting your session |
 | lightline.nix | Lightweight Statusline |
 | mini-icons.nix | Icon provider |
 | nvim-tree.nix | Adds a file explorer tree |
