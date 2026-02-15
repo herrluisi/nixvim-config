@@ -30,12 +30,12 @@
   #  })
   #'';
 
-  globals.mapleader = " ";
+  globals.mapleader = "<A->";
   keymaps = [
     # Global
     # Default mode is "" which means normal-visual-op
     {
-      key = "<C-n>";
+      key = "<C-t>";
       action = "<CMD>NvimTreeToggle<CR>";
       options.desc = "Toggle NvimTree";
     }
@@ -199,6 +199,13 @@
       action = "<C-\\><C-n>";
       options.desc = "Escape terminal mode";
     }
+    {
+      # Escape terminal mode using jk
+      mode = "t";
+      key = "jk";
+      action = "<C-\\><C-n>";
+      options.desc = "Escape terminal mode";
+    }
 
     # Trouble 
     {
@@ -211,5 +218,60 @@
       action = "<CMD>Trouble diagnostics toggle<CR>";
       options.desc = "Toggle trouble";
     }
+    
+    # Oil keymaps
+    {
+      mode = "n";
+      key = "-";
+      action = "<cmd>Oil<CR>";
+      options = { desc = "Open parent directory"; silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<cmd>lua require('oil').open_float()<CR>";
+      options = { desc = "Open Oil (floating)"; silent = true; };
+    }
+    
+
+    # Telescope keymaps
+    {
+      mode = "n";
+      key = "<leader>ff";
+      action = "<cmd>Telescope find_files<CR>";
+      options = { desc = "Find files"; silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>fg";
+      action = "<cmd>Telescope live_grep<CR>";
+      options = { desc = "Live grep"; silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>fb";
+      action = "<cmd>Telescope buffers<CR>";
+      options = { desc = "Buffers"; silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>fr";
+      action = "<cmd>Telescope oldfiles<CR>";
+      options = { desc = "Recent files"; silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>fp";
+      action = "<cmd>Telescope projects<CR>";
+      options = { desc = "Projects"; silent = true; };
+    }
+
+    # Alpha/Dashboard
+    {
+      mode = "n";
+      key = "<leader>;";
+      action = "<cmd>Alpha<CR>";
+      options = { desc = "Open Dashboard"; silent = true; };
+    }  
   ];
 }
