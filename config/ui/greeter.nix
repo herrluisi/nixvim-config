@@ -202,13 +202,13 @@
               val = "  Open Working Directory";
               on_press.__raw = "function() require('oil').open(vim.fn.getcwd()) end";
               opts = {
-                shortcut = "w";
+                shortcut = "m";
                 position = "center";
                 cursor = 3;
                 width = 50;
                 align_shortcut = "right";
                 hl_shortcut = "Keyword";
-                keymap = [ "n" "w" ":lua require('oil').open(vim.fn.getcwd())<CR>" { noremap = true; silent = true; } ];
+                keymap = [ "n" "m" ":lua require('oil').open(vim.fn.getcwd())<CR>" { noremap = true; silent = true; } ];
               };
             }
             {
