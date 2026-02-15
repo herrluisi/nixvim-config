@@ -112,6 +112,9 @@ Descriptions of all the config files/plugins used in this configuration.
 | wilder.nix | Command auto completion and search function (with /) |
 
 
+## Personal Preferences which are not intuitive
+1. If you press 'jk' in edit mode, you will leave the edit mode into normal mode (this also happens if you are in the terminal)
+
 
 ## Contributing
 
