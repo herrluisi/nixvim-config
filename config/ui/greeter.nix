@@ -1,5 +1,5 @@
 {
-    # ================================
+  # ================================
     # Oil.nvim - File Explorer
     # ================================
     plugins.oil = {
@@ -62,7 +62,7 @@
             "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ "
             "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ "
             "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ "
-            "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ "
+            "  ██║╚██╗██║���█╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ "
             "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ "
             "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ "
             "                                                     "
@@ -135,6 +135,70 @@
             }
             {
               type = "button";
+              val = "  Open Folder";
+              on_press.__raw = ''
+                function()
+                  require('telescope.builtin').find_files({
+                    find_command = { 'fd', '--type', 'd', '--hidden', '--exclude', '.git', '--base-directory', vim.fn.expand('~') },
+                    cwd = vim.fn.expand('~'),
+                    prompt_title = 'Open Folder as Project',
+                    attach_mappings = function(prompt_bufnr, map)
+                      local actions = require('telescope.actions')
+                      local action_state = require('telescope.actions.state')
+                      
+                      actions.select_default:replace(function()
+                        actions.close(prompt_bufnr)
+                        local selection = action_state.get_selected_entry()
+                        if selection then
+                          local path = vim.fn.expand('~') .. '/' .. selection[1]
+                          vim.cmd('cd ' .. path)
+                          require('nvim-tree.api').tree.open()
+                        end
+                      end)
+                      return true
+                    end,
+                  })
+                end
+              '';
+              opts = {
+                shortcut = "o";
+                position = "center";
+                cursor = 3;
+                width = 50;
+                align_shortcut = "right";
+                hl_shortcut = "Keyword";
+                keymap = [ "n" "o" "" { noremap = true; silent = true; callback.__raw = ''
+                  function()
+                    require('telescope.builtin').find_files({
+                      find_command = { 'fd', '--type', 'd', '--hidden', '--exclude', '.git', '--base-directory', vim.fn.expand('~') },
+                      cwd = vim.fn.expand('~'),
+                      prompt_title = 'Open Folder as Project',
+                      attach_mappings = function(prompt_bufnr, map)
+                        local actions = require('telescope.actions')
+                        local action_state = require('telescope.actions.state')
+                        
+                        actions.select_default:replace(function()
+                          actions.close(prompt_bufnr)
+                          local selection = action_state.get_selected_entry()
+                          if selection then
+                            local path = vim.fn.expand('~') .. '/' .. selection[1]
+                            vim.cmd('cd ' .. path)
+                            require('nvim-tree.api').tree.open()
+                          end
+                        end)
+                        return true
+                      end,
+                    })
+                  end
+                ''; } ];
+              };
+            }
+            {
+              type = "padding";
+              val = 1;
+            }
+            {
+              type = "button";
               val = "  Open Working Directory";
               on_press.__raw = "function() require('oil').open(vim.fn.getcwd()) end";
               opts = {
@@ -145,6 +209,36 @@
                 align_shortcut = "right";
                 hl_shortcut = "Keyword";
                 keymap = [ "n" "w" ":lua require('oil').open(vim.fn.getcwd())<CR>" { noremap = true; silent = true; } ];
+              };
+            }
+            {
+              type = "padding";
+              val = 1;
+            }
+            {
+              type = "button";
+              val = "  Open Working Directory as Project";
+              on_press.__raw = ''
+                function()
+                  local cwd = vim.fn.getcwd()
+                  vim.cmd('cd ' .. cwd)
+                  require('nvim-tree.api').tree.open()
+                end
+              '';
+              opts = {
+                shortcut = "w";
+                position = "center";
+                cursor = 3;
+                width = 50;
+                align_shortcut = "right";
+                hl_shortcut = "Keyword";
+                keymap = [ "n" "w" "" { noremap = true; silent = true; callback.__raw = ''
+                  function()
+                    local cwd = vim.fn.getcwd()
+                    vim.cmd('cd ' .. cwd)
+                    require('nvim-tree.api').tree.open()
+                  end
+                ''; } ];
               };
             }
             {
@@ -287,82 +381,12 @@
       enable = true;
       enableTelescope = true;
       settings = {
-        # Use LSP for project detection
         use_lsp = true;
-        # Patterns to detect project root
         patterns = [ ".git" "Makefile" "package.json" "flake.nix" "Cargo.toml" ];
         show_hidden = true;
       };
     };
 
-    # ================================
-    # Web Devicons - File Icons
-    # ================================
-    plugins.web-devicons.enable = true;
-
-    # ================================
-    # Keymaps
-    # ================================
-    keymaps = [
-      # Oil keymaps
-      {
-        mode = "n";
-        key = "-";
-        action = "<cmd>Oil<CR>";
-        options = { desc = "Open parent directory"; silent = true; };
-      }
-      {
-        mode = "n";
-        key = "<leader>e";
-        action = "<cmd>lua require('oil').open_float()<CR>";
-        options = { desc = "Open Oil (floating)"; silent = true; };
-      }
-      {
-        mode = "n";
-        key = "<leader>.";
-        action = "<cmd>lua require('oil').open(vim.fn.getcwd())<CR>";
-        options = { desc = "Open working directory"; silent = true; };
-      }
-      # Telescope keymaps
-      {
-        mode = "n";
-        key = "<leader>ff";
-        action = "<cmd>Telescope find_files<CR>";
-        options = { desc = "Find files"; silent = true; };
-      }
-      {
-        mode = "n";
-        key = "<leader>fg";
-        action = "<cmd>Telescope live_grep<CR>";
-        options = { desc = "Live grep"; silent = true; };
-      }
-      {
-        mode = "n";
-        key = "<leader>fb";
-        action = "<cmd>Telescope buffers<CR>";
-        options = { desc = "Buffers"; silent = true; };
-      }
-      {
-        mode = "n";
-        key = "<leader>fr";
-        action = "<cmd>Telescope oldfiles<CR>";
-        options = { desc = "Recent files"; silent = true; };
-      }
-      {
-        mode = "n";
-        key = "<leader>fp";
-        action = "<cmd>Telescope projects<CR>";
-        options = { desc = "Projects"; silent = true; };
-      }
-      # Alpha/Dashboard
-      {
-        mode = "n";
-        key = "<leader>;";
-        action = "<cmd>Alpha<CR>";
-        options = { desc = "Open Dashboard"; silent = true; };
-      }
-    ];
-    
     # ================================
     # Auto-open nvim-tree on directory
     # ================================
@@ -371,13 +395,9 @@
         event = [ "VimEnter" ];
         callback.__raw = ''
           function(data)
-            -- Check if the argument is a directory
             local is_directory = vim.fn.isdirectory(data.file) == 1
-
             if is_directory then
-              -- Change to the directory
               vim.cmd.cd(data.file)
-              -- Open nvim-tree
               require("nvim-tree.api").tree.open()
             end
           end

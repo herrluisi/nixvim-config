@@ -218,7 +218,6 @@
       action = "<CMD>Trouble diagnostics toggle<CR>";
       options.desc = "Toggle trouble";
     }
-    
     # Oil keymaps
     {
       mode = "n";
@@ -232,8 +231,13 @@
       action = "<cmd>lua require('oil').open_float()<CR>";
       options = { desc = "Open Oil (floating)"; silent = true; };
     }
+    {
+      mode = "n";
+      key = "<leader>.";
+      action = "<cmd>lua require('oil').open(vim.fn.getcwd())<CR>";
+      options = { desc = "Open working directory"; silent = true; };
+    }
     
-
     # Telescope keymaps
     {
       mode = "n";
@@ -272,6 +276,6 @@
       key = "<leader>;";
       action = "<cmd>Alpha<CR>";
       options = { desc = "Open Dashboard"; silent = true; };
-    }  
+    }
   ];
 }
