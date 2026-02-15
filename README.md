@@ -9,6 +9,7 @@ Because who doesn't like a declarative configuration of Neovim?
 <details>
 <summary>More Screenshots</summary>
 
+![Screenshot of configuration](/images/greeter.png)
 ![Screenshot of configuration](/images/copilot.png)
 ![Screenshot of configuration](/images/trouble.png)
 </details>
