@@ -24,12 +24,12 @@ nix run github:herrluisi/nixvim-config
 
 If you want to try the configuration you can just add it temporary to your profile:
 ```bash
-nix profile add github:herrluisi/nixvim-config
+nix profile install github:herrluisi/nixvim-config
 ```
 
 To remove it from your profile:
 ```bash
-nix profile delete nixvim-config
+nix profile remove nixvim-config
 ```
 
 
