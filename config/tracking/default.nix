@@ -1,5 +1,5 @@
 {
   imports = [
-    ./wakatime.nix
+    #./wakatime.nix
   ];
 }
