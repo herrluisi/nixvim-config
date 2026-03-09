@@ -19,7 +19,7 @@
         };
       in
       {
-        formatter = nixpkgs.nixfmt;
+        formatter = pkgs.nixfmt-rfc-style;
 
         checks = {
           default = nixvimLib.check.mkTestDerivationFromNvim {
