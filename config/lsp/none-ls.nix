@@ -16,6 +16,7 @@
         ktlint.enable = true;
         nixfmt.enable = true;
         markdownlint.enable = true;
+        ruff_format.enable = true;
         shellharden.enable = true;
         shfmt.enable = true;
       };
