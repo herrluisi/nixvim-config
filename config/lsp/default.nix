@@ -2,6 +2,7 @@
   imports = [
     ./fidget.nix
     ./none-ls.nix
+    ./python.nix
     ./vimtex.nix
   ];
 

@@ -16,6 +16,7 @@
         ktlint.enable = true;
         nixfmt.enable = true;
         markdownlint.enable = true;
+        black.enable = true;  # python format
         shellharden.enable = true;
         shfmt.enable = true;
       };

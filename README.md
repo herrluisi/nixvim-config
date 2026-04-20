@@ -71,6 +71,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | --- | --- |
 | auto-pairs.nix | Pairs brackets and quotes automatically |
 | blankline.nix | Adds automatically Indentation in neovim |
+| formatting.nix | Runs terraform fmt automatically on save via LSP |
 | treesitter.nix | Syntax highlighting |
 
 ### git configuration
