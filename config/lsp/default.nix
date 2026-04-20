@@ -32,9 +32,8 @@
           enable = true;
           package = null;
         };
-        ts_ls = {
+        vtsls = {
           enable = true;
-          package = null;
         };
         dockerls = {
           enable = true;
