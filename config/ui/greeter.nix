@@ -319,6 +319,24 @@
             }
             {
               type = "button";
+              val = "  Theme";
+              on_press.__raw = "function() vim.cmd('ThemeSelect') end";
+              opts = {
+                shortcut = "t";
+                position = "center";
+                cursor = 3;
+                width = 50;
+                align_shortcut = "right";
+                hl_shortcut = "Keyword";
+                keymap = [ "n" "t" ":ThemeSelect<CR>" { noremap = true; silent = true; } ];
+              };
+            }
+            {
+              type = "padding";
+              val = 1;
+            }
+            {
+              type = "button";
               val = "  Quit";
               on_press.__raw = "function() vim.cmd('qa') end";
               opts = {

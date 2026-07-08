@@ -100,6 +100,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | greeter.nix | A nice greeter which gives you a few features for starting your session |
 | lightline.nix | Lightweight Statusline |
 | mini-icons.nix | Icon provider |
+| theme-toggle.nix | Theme switcher between default and presentation light mode |
 | nvim-tree.nix | Adds a file explorer tree |
 
 ### utils
