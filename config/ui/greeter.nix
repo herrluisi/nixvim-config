@@ -337,6 +337,42 @@
             }
             {
               type = "button";
+              val = "  Theme Default";
+              on_press.__raw = "function() vim.cmd('ThemeDefault') end";
+              opts = {
+                shortcut = "1";
+                position = "center";
+                cursor = 3;
+                width = 50;
+                align_shortcut = "right";
+                hl_shortcut = "Keyword";
+                keymap = [ "n" "1" ":ThemeDefault<CR>" { noremap = true; silent = true; } ];
+              };
+            }
+            {
+              type = "padding";
+              val = 1;
+            }
+            {
+              type = "button";
+              val = "  Theme Presentation";
+              on_press.__raw = "function() vim.cmd('ThemePresentation') end";
+              opts = {
+                shortcut = "2";
+                position = "center";
+                cursor = 3;
+                width = 50;
+                align_shortcut = "right";
+                hl_shortcut = "Keyword";
+                keymap = [ "n" "2" ":ThemePresentation<CR>" { noremap = true; silent = true; } ];
+              };
+            }
+            {
+              type = "padding";
+              val = 1;
+            }
+            {
+              type = "button";
               val = "  Quit";
               on_press.__raw = "function() vim.cmd('qa') end";
               opts = {

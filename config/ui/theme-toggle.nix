@@ -95,14 +95,26 @@
       end
     end
 
+    local function set_default_theme()
+      set_theme(default_theme_key, true)
+    end
+
+    local function set_presentation_theme()
+      set_theme(presentation_theme_key, true)
+    end
+
     _G.NixvimTheme = {
       select_theme = select_theme,
       toggle_theme = toggle_theme,
+      set_default_theme = set_default_theme,
+      set_presentation_theme = set_presentation_theme,
       set_theme = set_theme,
     }
 
     vim.api.nvim_create_user_command("ThemeSelect", select_theme, { desc = "Select Neovim theme profile" })
     vim.api.nvim_create_user_command("ThemeToggle", toggle_theme, { desc = "Toggle between default and presentation theme" })
+    vim.api.nvim_create_user_command("ThemeDefault", set_default_theme, { desc = "Set default Neovim theme profile" })
+    vim.api.nvim_create_user_command("ThemePresentation", set_presentation_theme, { desc = "Set presentation Neovim theme profile" })
 
     vim.api.nvim_create_autocmd("VimEnter", {
       callback = function()
